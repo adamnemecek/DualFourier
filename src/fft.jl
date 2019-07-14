@@ -1,5 +1,5 @@
 
-function dual_fft(f::Array{Dual})
+function dual_fft(f)
     re = value.(f)
     du = epsilon.(f)
 

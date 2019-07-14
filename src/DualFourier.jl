@@ -1,7 +1,7 @@
 module DualFourier
 
 
-using DualNumbers
+using DualNumbers: Dual, value, epsilon
 using FFTW: fft, ifft
 
 include("fft.jl")
