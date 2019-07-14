@@ -1,0 +1,4 @@
+name = "DualFourier"
+uuid = "5740bd96-a678-11e9-0e67-61818bac4dd4"
+authors = ["Adam Nemecek <adamnemecek@gmail.com>"]
+version = "0.1.0"
