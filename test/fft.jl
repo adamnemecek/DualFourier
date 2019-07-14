@@ -12,6 +12,7 @@ using Test: @test, @testset
     b = rand(ComplexF64, 10)
     @test fft(a) .* fft(b) ≈ fft(slow_cconv(a,b, length(a)))
 end
+isapprox(a::Dual, b::Dual) = value(a) ≈ value(b) && epsilon(a) ≈ epsilon(b)
 
 @testset "dual convolution theorem" begin
     are = rand(Float64, 10)
@@ -25,8 +26,9 @@ end
 
     res = dual_fft(a) .* dual_fft(b)
     exp = dual_fft(slow_cconv(a,b, length(a)))
-    println(res)
-    println(exp)
+    # println(res)
+    # println(exp)
+    @test res ≈ exp
 
 end
 end
